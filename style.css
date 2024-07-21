@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: "Inter", sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+    border-style: none;
+    font-family: "Inter", sans-serif;
+}
+
+/*--------------------------------------------*/ 
+
+body{
+    background-color: hsl(222, 26%, 31%);
+    color:hsl(0, 0%, 100%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+main {
+    width: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calculator--interface{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme--title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.calculator--theme {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.calculator--title {
+    text-transform: lowercase;
+    font-weight: 700;
+    font-size: 20px;
+    font-size: 28px;
+}
+
+.calculator--display{
+    font-size: 40px;
+    font-weight: 800;
+    text-align: end;
+    background-color: hsl(224, 33%, 16%);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.calculator--buttons {
+    padding: 25px;
+    background-color: hsl(223deg 28.62% 20.93%);
+    border-radius: 10px;
+}
+ 
+.buttons--number {
+    color: hsl(223, 31%, 20%);
+    background-color: hsl(45, 7%, 89%);
+    filter: drop-shadow(0px 5px hsl(35, 11%, 61%));
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+} 
+
+.buttons--number:hover {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.buttons--numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.buttons--result{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.result--reset {
+    padding: 12px 101px;
+    margin-top: 20px;
+    filter: drop-shadow(0px 5px hsl(224, 23%, 33%));
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 12px 63px;
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(225, 21%, 49%);
+    cursor: pointer;
+}
+
+.result--reset:hover {
+    background-color: hsl(225, 31%, 60%);
+}
+
+.result--equals {
+    padding: 12px 101px;
+    margin-top: 20px;
+    filter: drop-shadow(0px 5px hsl(6, 63%, 50%));
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 12px 63px;
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(6, 82%, 63%);
+    cursor: pointer;
+}
+
+.result--equals:hover {
+    background-color: hsl(6, 59%, 63%);
+}
+
+
+/* Genel stil */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    margin: 10px;
+  }
+  
+  /* Giriş stil */
+  .toggle-switch .toggle-input {
+    display: none;
+  }
+  
+  /* Anahtarın stilinin etrafındaki etiketin stil */
+  .toggle-switch .toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 24px;
+    background-color: #2196F3;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Anahtarın yuvarlak kısmının stil */
+  .toggle-switch .toggle-label::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  /* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
+  .toggle-switch .toggle-input:checked + .toggle-label {
+    background-color: #4CAF50;
+  }
+  
+  .toggle-switch .toggle-input:checked + .toggle-label::before {
+    transform: translateX(16px);
+  }
+  
+  /* Light tema */
+  .toggle-switch.light .toggle-label {
+    background-color: #BEBEBE;
+  }
+  
+  .toggle-switch.light .toggle-input:checked + .toggle-label {
+    background-color: #9B9B9B;
+  }
+  
+  .toggle-switch.light .toggle-input:checked + .toggle-label::before {
+    transform: translateX(6px);
+  }
+  
+  /* Dark tema */
+  .toggle-switch.dark .toggle-label {
+    background-color: #4B4B4B;
+  }
+  
+  .toggle-switch.dark .toggle-input:checked + .toggle-label {
+    background-color: #717171;
+  }
+  
+  .toggle-switch.dark .toggle-input:checked + .toggle-label::before {
+    transform: translateX(16px);
+  }
+  
