@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shouldResetDisplay = false;
         }
   
-        if (value === '.' && currentInput.slice(-1) === '.') return; // Prevents multiple decimal points
+        if (value === '.' && currentInput.slice(-1) === '.') return; 
   
         currentInput += value;
         display.textContent = currentInput;
